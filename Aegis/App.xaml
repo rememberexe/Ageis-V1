@@ -1,0 +1,140 @@
+﻿<Application x:Class="Aegis.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Views/LoginWindow.xaml">
+    <Application.Resources>
+  
+            <!-- ==== COLORS ==== -->
+            <Color x:Key="BgWindow">#121212</Color>
+            <Color x:Key="BgPanel">#181818</Color>
+            <Color x:Key="BgHeader">#1E1E1E</Color>
+
+            <Color x:Key="BorderColor">#2A2A2A</Color>
+
+            <Color x:Key="TextPrimary">#E6E6E6</Color>
+            <Color x:Key="TextSecondary">#A0A0A0</Color>
+
+
+            <!-- ACCENT COLOR -->
+            <Color x:Key="AccentColor">#4CAF50</Color>
+
+            <!-- PROGRESS -->
+            <Color x:Key="ProgressBg">#1E1E1E</Color>
+
+            <!-- ==== BRUSHES ==== -->
+            <SolidColorBrush x:Key="BrushBgWindow"
+                     Color="{StaticResource BgWindow}"/>
+
+            <SolidColorBrush x:Key="BrushBgPanel"
+                     Color="{StaticResource BgPanel}"/>
+
+            <SolidColorBrush x:Key="BrushBgHeader"
+                     Color="{StaticResource BgHeader}"/>
+
+            <SolidColorBrush x:Key="BrushBorder"
+                     Color="{StaticResource BorderColor}"/>
+
+            <SolidColorBrush x:Key="BrushTextPrimary"
+                     Color="{StaticResource TextPrimary}"/>
+
+            <SolidColorBrush x:Key="BrushTextSecondary"
+                     Color="{StaticResource TextSecondary}"/>
+
+            <!-- ==== BUTTON HOVER COLORS ==== -->
+            <Color x:Key="ButtonHoverBg">#232323</Color>
+            <Color x:Key="ButtonPressedBg">#1A1A1A</Color>
+
+            <SolidColorBrush x:Key="BrushButtonHoverBg"
+                 Color="{StaticResource ButtonHoverBg}"/>
+
+            <SolidColorBrush x:Key="BrushButtonPressedBg"
+                 Color="{StaticResource ButtonPressedBg}"/>
+
+
+            <!-- ACCENT -->
+            <SolidColorBrush x:Key="BrushAccent"
+                     Color="{StaticResource AccentColor}"/>
+
+            <!-- WINDOW BACKGROUND (dialog vs) -->
+            <SolidColorBrush x:Key="BrushWindowBackground"
+                     Color="{StaticResource BgWindow}"/>
+
+            <!-- CARD BACKGROUND -->
+            <SolidColorBrush x:Key="BrushCardBackground"
+                     Color="{StaticResource BgPanel}"/>
+
+            <!-- PROGRESS BAR -->
+            <SolidColorBrush x:Key="BrushProgressBackground"
+                     Color="{StaticResource ProgressBg}"/>
+
+
+
+
+
+
+            <!-- ==== DARK THEME BUTTON STYLE ==== -->
+        <Style x:Key="DarkButtonStyle"
+       TargetType="Button">
+
+            <!-- DEFAULT -->
+            <Setter Property="Background"
+            Value="{StaticResource BrushBgPanel}"/>
+            <Setter Property="Foreground"
+            Value="{StaticResource BrushTextPrimary}"/>
+            <Setter Property="BorderBrush"
+            Value="{StaticResource BrushBorder}"/>
+            <Setter Property="BorderThickness"
+            Value="1"/>
+            <Setter Property="Padding"
+            Value="10,4"/>
+            <Setter Property="Cursor"
+            Value="Hand"/>
+            <Setter Property="FontSize"
+            Value="12"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="6">
+
+                            <ContentPresenter
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- 🟢 HOVER -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border"
+                                Property="Background"
+                                Value="{StaticResource BrushButtonHoverBg}"/>
+                            </Trigger>
+
+                            <!-- 🔵 PRESSED -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Border"
+                                Property="Background"
+                                Value="{StaticResource BrushButtonPressedBg}"/>
+                            </Trigger>
+
+                            <!-- ⚫ DISABLED -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border"
+                                Property="Opacity"
+                                Value="0.4"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Application.Resources>
+</Application>
