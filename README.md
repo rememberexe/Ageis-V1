@@ -69,7 +69,7 @@ Amaç; modern, sade ve premium bir kullanıcı arayüzü ile birlikte **güvenli
 
 1. Depoyu klonla:
    ```bash
-   git clone https://github.com/kullaniciadi/aegis.git
+   git clone https://github.com/rememberexe/aegis.git
    ```
 2. Visual Studio ile aç
 3. .NET Desktop Development workload yüklü olsun
